@@ -1,0 +1,62 @@
+<div class="container">
+    <h1 class="title">Откликнитесь на вакансию</h1>
+    <form [formGroup]="jobApplicationForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Имя</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Фамилия</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Номер телефона</mat-label>
+          <mat-select formControlName="phonePrefix">
+            <mat-option value="ru">Ru</mat-option>
+          </mat-select>
+          <input matInput formControlName="phoneNumber">
+        </mat-form-field>
+      </div>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Ник в ТГ</mat-label>
+        <span matTextPrefix>&#64; &nbsp;</span>
+        <input matInput formControlName="telegramNick" placeholder="username">
+      </mat-form-field>
+      <mat-label>Резюме</mat-label>
+      <mat-card class="resume-upload">        
+        <mat-card-content>          
+          <div class="upload-section">
+            <mat-icon class="upload-icon">upload</mat-icon>
+            <span style="color:#8FC104;">Загрузите файл</span> <span> или перенесите его сюда</span> 
+            <p>PNG, PDF, DOC up to 10MB</p>
+            <input type="file" (change)="onFileChange($event)">
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Сопроводительное письмо</mat-label>
+        <textarea matInput formControlName="coverLetter" rows="5"></textarea>
+      </mat-form-field>
+  
+      <mat-divider></mat-divider>
+  
+      <mat-radio-group formControlName="contactMethod" class="contact-method">
+        <mat-label>Предпочтительный способ связи</mat-label>
+        <mat-radio-button value="email">По электронной почте</mat-radio-button>
+        <mat-radio-button value="phone">По номеру телефона</mat-radio-button>
+      </mat-radio-group>
+  
+      <button mat-raised-button color="primary" type="submit">Отправить отклик</button>
+    </form>
+  </div>
+  
