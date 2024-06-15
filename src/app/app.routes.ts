@@ -1,8 +1,13 @@
 import { Routes } from '@angular/router';
-import { JobApplicationComponent } from './job-application/job-application.component';
 import { JobListComponent } from './job-list/job-list.component';
+import { JobComponent } from './job/job.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-    {path: 'job-application', component: JobApplicationComponent},
+    {path: 'jobs', component: JobListComponent},
+    {path: 'job/:id', component: JobComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'login', component: LoginComponent},
     {path: '', component: JobListComponent},
 ];
