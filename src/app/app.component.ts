@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { JobComponent } from './job/job.component';
 
@@ -8,6 +8,7 @@ import { JobComponent } from './job/job.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
+    HttpClientModule,
     NavBarComponent,
     JobComponent,
   ],

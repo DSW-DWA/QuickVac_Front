@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JobServiceService {
+  private apiUrl = 'http://194.113.35.10/api';
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  getJobs() {
-    
+  getJobs(): Observable<Job[]> {
+    return this.http.get<Job[]>(`${this.apiUrl}/vacancies`)
   }
 
   getJobInfo(jobId: number): string{
@@ -49,4 +50,22 @@ export class JobServiceService {
     
     return result;
   }
+}
+
+
+export interface Job{
+  id: string;
+  title: string;
+  salaryAmount: number | null;
+  salaryCurrency: string | null;
+  location: string;
+  status: string;
+  direction: string;
+  workType: string;
+  experienceLevel: string;
+  employmentLevel: string;
+  educationLevel: string;
+  companyId: string;
+  postedDate: string;
+  closingDate: string;
 }
