@@ -5,6 +5,7 @@ WORKDIR /QUICKVAC_FRONT
 COPY package*.json ./
 
 RUN npm install
+RUN npm install dotenv
 
 COPY . .
 
@@ -15,4 +16,5 @@ ENV HOST=${HOST}
 
 EXPOSE ${PORT}
 
+CMD ["node", "set-env.ts", "--environment=dev"]
 CMD ["sh", "-c", "ng serve --port ${PORT} --host ${HOST}"]
