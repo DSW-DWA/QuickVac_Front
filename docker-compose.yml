@@ -3,8 +3,11 @@ services:
   angular-app:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
+      args:
+        - PORT=${PORT}
+        - HOST=${HOST}
     ports:
-      - "4200:4200"
+      - "${PORT}:${PORT}"
     env_file:
       - .env
