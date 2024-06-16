@@ -2,24 +2,24 @@
     <h3 class="text-lg font-semibold">{{ title }}</h3>
     <div class="mt-2 space-y-1 text-sm text-gray-600">
       <div class="flex items-center">
-        <fa-icon [icon]="faBriefcase" class="mr-2"></fa-icon>
+        <mat-icon class="mr-2">work_outline</mat-icon>
         {{ workType }}
       </div>
       <div class="flex items-center">
-        <fa-icon [icon]="faMapMarkerAlt" class="mr-2"></fa-icon>
+        <mat-icon class="mr-2">location_on</mat-icon>    
         {{ location }}
       </div>
       <div *ngIf="salaryAmount != null" class="flex items-center">
-        <fa-icon [icon]="faMoneyBillWave" class="mr-2"></fa-icon>     
+        <mat-icon class="mr-2">attach_money</mat-icon> 
         {{ salaryAmount }} {{salaryCurrency}}
       </div>
       <!-- надо переписать на else -->
       <div *ngIf="salaryAmount == null" class="flex items-center"> 
-        <fa-icon [icon]="faMoneyBillWave" class="mr-2"></fa-icon>     
+        <mat-icon class="mr-2">attach_money</mat-icon>   
         По результатам собеседования
       </div>
       <div class="flex items-center">
-        <fa-icon [icon]="faClock" class="mr-2"></fa-icon>
+        <mat-icon class="mr-2">account_circle</mat-icon>
         {{ experienceLevel }}
       </div>
     </div>

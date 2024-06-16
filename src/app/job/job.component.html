@@ -1,2 +1,32 @@
-<div #jobInfoContainer class="max-w-4xl mx-auto p-6"></div>
-<app-job-application></app-job-application>
+<div class="max-w-4xl mx-auto">
+    <div class="bg-gray-50 p-8 text-center">
+        <a href="/jobs" class="flex items-center mb-4 text-gray-500">
+          <mat-icon>arrow_back</mat-icon>
+          <span class="ml-2">Вернуться к поиску вакансий</span>
+        </a>
+        <div class="flex justify-between">
+            <span class="mb-4 text-4xl font-bold">{{jobTitle}}</span>
+            <div class="flex justify-center">
+                <button mat-icon-button class="mr-4">
+                    <mat-icon class="text-green-500">favorite_border</mat-icon>
+                  </button>
+                  <button mat-icon-button>
+                    <mat-icon class="text-green-500">share</mat-icon>
+                  </button>
+            </div>
+        </div>
+        <div class="flex justify-center items-center space-x-4 mb-4">
+          <mat-icon>work_outline</mat-icon>
+          <span>{{workType}}</span>
+          <mat-icon>location_on</mat-icon>
+          <span>{{location}}</span>
+          <mat-icon>attach_money</mat-icon>
+          <span>{{salary}}</span>
+          <mat-icon>account_circle</mat-icon>
+          <span>{{experienceLevel}}</span>
+        </div>
+      </div>
+    <div #jobInfoContainer class="max-w-4xl mx-auto p-6"></div>
+    <app-job-application></app-job-application>
+</div>
+

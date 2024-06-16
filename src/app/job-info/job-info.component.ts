@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition, faBriefcase, faMapMarkerAlt, faMoneyBillWave, faClock } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,7 +8,8 @@ import { IconDefinition, faBriefcase, faMapMarkerAlt, faMoneyBillWave, faClock }
   selector: 'app-job-info',
   standalone: true,
   imports: [FontAwesomeModule,
-    CommonModule],
+    CommonModule,
+    MatIcon],
   templateUrl: './job-info.component.html',
   styleUrl: './job-info.component.css'
 })
