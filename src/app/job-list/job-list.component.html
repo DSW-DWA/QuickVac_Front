@@ -3,18 +3,16 @@
 <div class="min-h-screen bg-gray-50 p-8">
     <app-job-search></app-job-search>
     <span class="mt-6 text-2xl">Все вакансии · {{jobs.length}} вакансий</span>
-    <div class="flex flex-col items-left">
-      <a href="/job/{{job.id}}" *ngFor="let job of jobs">
-        <app-job-info       
-        [id] = "job.id"
-        [title]="job.title"
-        [workType]="job.work_type"
-        [location]="job.location"
-        [salaryAmount]="job.salary_amount"
-        [salaryCurrency]="job.salary_currency"
-        [experienceLevel]="job.experience_level">
-        </app-job-info>
-      </a>   
-    </div>
+    <a href="/job/{{job.id}}" *ngFor="let job of jobs" class="flex flex-col items-left">
+      <app-job-info       
+      [id] = "job.id"
+      [title]="job.title"
+      [workType]="job.work_type"
+      [location]="job.location"
+      [salaryAmount]="job.salary_amount"
+      [salaryCurrency]="job.salary_currency"
+      [experienceLevel]="job.experience_level">
+      </app-job-info>
+    </a>   
   </div>
   
