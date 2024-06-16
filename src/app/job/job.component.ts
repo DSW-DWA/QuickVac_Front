@@ -22,22 +22,20 @@ export class JobComponent implements AfterViewInit {
       const id = params.get('id');
       let description: string = "";
       this.jobService.getJobInfo(id!).subscribe(jobInfo => {
-        console.log(jobInfo.description);
         description = jobInfo.description
+        
+        this.jobInfoContainer.nativeElement.innerHTML = description;    
+        this.jobInfoContainer.nativeElement.childNodes.forEach(childNode => {
+          if (childNode.nodeName == "H2")       
+            this.renderer.setAttribute(childNode, "class", "text-4xl font-bold mb-4");
+  
+          if (childNode.nodeName == "UL")
+            this.renderer.setAttribute(childNode, "class", "list-disc pl-6 space-y-2 mb-8");
+        })
+      });
       }, 
         error => console.log("Ошибка ", error)
       ); 
-      console.log(description);
-      this.jobInfoContainer.nativeElement.innerHTML = description;    
-      this.jobInfoContainer.nativeElement.childNodes.forEach(childNode => {
-        if (childNode.nodeName == "H2")       
-          this.renderer.setAttribute(childNode, "class", "text-4xl font-bold mb-4");
-
-        if (childNode.nodeName == "UL")
-          this.renderer.setAttribute(childNode, "class", "list-disc pl-6 space-y-2 mb-8");
-      })
-    });
-
   }
 
 }
