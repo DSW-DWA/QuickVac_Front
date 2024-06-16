@@ -12,6 +12,7 @@ import { IconDefinition, faBriefcase, faMapMarkerAlt, faMoneyBillWave, faClock }
   styleUrl: './job-info.component.css'
 })
 export class JobInfoComponent {
+  @Input() id!: string;
   @Input() title!: string;
   @Input() workType!: string;
   @Input() location!: string;
