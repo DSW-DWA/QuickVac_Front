@@ -21,7 +21,12 @@ export class JobComponent implements AfterViewInit {
     this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get('id');
       let description: string = "";
-      this.jobService.getJobInfo(id!).subscribe(jobInfo => description = jobInfo.description); 
+      this.jobService.getJobInfo(id!).subscribe(jobInfo => {
+        console.log(jobInfo.description);
+        description = jobInfo.description
+      }, 
+        error => console.log("Ошибка ", error)
+      ); 
       console.log(description);
       this.jobInfoContainer.nativeElement.innerHTML = description;    
       this.jobInfoContainer.nativeElement.childNodes.forEach(childNode => {
