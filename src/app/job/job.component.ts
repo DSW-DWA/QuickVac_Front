@@ -22,7 +22,7 @@ export class JobComponent implements AfterViewInit {
       const id = params.get('id');
       let description: string = "";
       this.jobService.getJobInfo(id!).subscribe(jobInfo => description = jobInfo.description); 
-        
+      console.log(description);
       this.jobInfoContainer.nativeElement.innerHTML = description;    
       this.jobInfoContainer.nativeElement.childNodes.forEach(childNode => {
         if (childNode.nodeName == "H2")       

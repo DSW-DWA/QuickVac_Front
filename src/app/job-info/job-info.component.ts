@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition, faBriefcase, faMapMarkerAlt, faMoneyBillWave, faClock } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,4 +25,5 @@ export class JobInfoComponent {
   faMapMarkerAlt = faMapMarkerAlt;
   faMoneyBillWave = faMoneyBillWave;
   faClock = faClock;
+
 }

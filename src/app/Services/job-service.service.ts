@@ -16,6 +16,7 @@ export class JobServiceService {
 
   getJobInfo(jobId: string): Observable<Job>{
     let result: Observable<Job> = this.http.get<Job>(`${this.apiUrl}/vacancies/${jobId}`);
+    console.log(result)
     return result;
   }
 }
