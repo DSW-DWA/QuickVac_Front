@@ -1,0 +1,30 @@
+<div class="bg-gray-50 p-8 text-center">
+    <!-- Добавить склонения в количество вакансий и добавить количество вакансий -->
+    <span class="mb-6 text-4xl font-bold mb-6">У нас есть <span class="text-green-500">243 открытые</span> позиции</span>
+    <div class="flex justify-center space-x-4 mt-24">
+      <mat-form-field class="w-1/4">
+        <mat-label>Разработка</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let option of developmentOptions" [value]="option">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-1/4">
+        <mat-label>Город</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let city of cities" [value]="city">{{ city }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-1/4">
+        <mat-label>Поиск по вакансиям</mat-label>
+        <input matInput placeholder="Введите ключевое слово">
+      </mat-form-field>
+      <!-- Приравнять кнопку по высоте к инпутам -->
+      <button mat-raised-button color="primary">Найти вакансию</button>
+    </div>
+    <div class="flex justify-center space-x-4">
+      <mat-checkbox>Удаленная работа</mat-checkbox>
+      <mat-checkbox>Стажировка</mat-checkbox>
+      <mat-checkbox>Руководящая должность</mat-checkbox>
+    </div>
+</div>
+  

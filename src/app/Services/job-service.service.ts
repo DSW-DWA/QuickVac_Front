@@ -56,16 +56,16 @@ export class JobServiceService {
 export interface Job{
   id: string;
   title: string;
-  salaryAmount: number | null;
-  salaryCurrency: string | null;
+  salary_amount: number | null;
+  salary_currency: string | null;
   location: string;
   status: string;
   direction: string;
-  workType: string;
-  experienceLevel: string;
-  employmentLevel: string;
-  educationLevel: string;
-  companyId: string;
-  postedDate: string;
-  closingDate: string;
+  work_type: string;
+  experience_level: string;
+  employment_level: string;
+  education_level: string;
+  company_id: string;
+  posted_date: string;
+  closing_date: string;
 }

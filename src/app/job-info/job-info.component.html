@@ -1,0 +1,30 @@
+<div class="p-4 mb-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 job-info-container">
+    <h3 class="text-lg font-semibold">{{ title }}</h3>
+    <div class="mt-2 space-y-1 text-sm text-gray-600">
+      <div class="flex items-center">
+        <fa-icon [icon]="faBriefcase" class="mr-2"></fa-icon>
+        {{ workType }}
+      </div>
+      <div class="flex items-center">
+        <fa-icon [icon]="faMapMarkerAlt" class="mr-2"></fa-icon>
+        {{ location }}
+      </div>
+      <div *ngIf="salaryAmount != null" class="flex items-center">
+        <fa-icon [icon]="faMoneyBillWave" class="mr-2"></fa-icon>     
+        {{ salaryAmount }} {{salaryCurrency}}
+      </div>
+      <!-- надо переписать на else -->
+      <div *ngIf="salaryAmount == null" class="flex items-center"> 
+        <fa-icon [icon]="faMoneyBillWave" class="mr-2"></fa-icon>     
+        По результатам собеседования
+      </div>
+      <div class="flex items-center">
+        <fa-icon [icon]="faClock" class="mr-2"></fa-icon>
+        {{ experienceLevel }}
+      </div>
+    </div>
+    <div class="mt-4 text-right">
+      <a href="#" class="text-green-600 hover:underline">Подробнее</a>
+    </div>
+  </div>
+  
